@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import React from "react";
+// import React from "react";
+import { fetchMovie } from "../helpers/axiosHelpers";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { CustomCard } from "../card/CustomCard";
 
@@ -8,7 +9,8 @@ export const SearchForm = () => {
 
   const handleOnChange = (e) => {
     const { value } = e.target;
-    console.log(value);
+    setSearch(value);
+    // console.log(value);
   };
 
   const handleOnsubmit = (e) => {
@@ -17,9 +19,12 @@ export const SearchForm = () => {
     alert("got the search value, now go get movie from api");
   };
 
+  const movie = fetchMovie(search);
+  console.log(movie);
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleOnsubmit}>
         <Row>
           <Col>
             <Form.Control
