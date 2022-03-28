@@ -16,7 +16,7 @@ export const SearchForm = () => {
 
   const handleOnsubmit = async (e) => {
     e.preventDefault();
-    alert("got the search value, now go get movie from api");
+    // alert("got the search value, now go get movie from api");
 
     const movie = await fetchMovie(search);
     setMovie(movie.data);
@@ -43,7 +43,7 @@ export const SearchForm = () => {
       <Row>
         <Col className="d-flex justify-content-center">
           {movie?.imdbID && <CustomCard movie={movie} />}
-          <CustomCard />
+          {/* <CustomCard /> don't need this custom card*/}
         </Col>
       </Row>
     </>
