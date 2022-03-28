@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 // import React from "react";
-import { fetchMovie } from "../helpers/axiosHelpers";
+import { fetchMovie } from "../../helpers/axiosHelper";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { CustomCard } from "../card/CustomCard";
 
 export const SearchForm = () => {
   const [search, setSearch] = useState("");
+  const [movie, setMovie] = useState();
 
   const handleOnChange = (e) => {
     const { value } = e.target;
@@ -13,14 +14,14 @@ export const SearchForm = () => {
     // console.log(value);
   };
 
-  const handleOnsubmit = (e) => {
+  const handleOnsubmit = async (e) => {
     e.preventDefault();
-
     alert("got the search value, now go get movie from api");
-  };
 
-  const movie = fetchMovie(search);
-  console.log(movie);
+    const movie = await fetchMovie(search);
+    setMovie(movie.data);
+    console.log(movie);
+  };
 
   return (
     <>
@@ -41,6 +42,7 @@ export const SearchForm = () => {
       </Form>
       <Row>
         <Col className="d-flex justify-content-center">
+          {movie?.imdbID && <CustomCard movie={movie} />}
           <CustomCard />
         </Col>
       </Row>
