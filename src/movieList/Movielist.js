@@ -6,14 +6,14 @@ export const Movielist = () => {
   return (
     <Row>
       <Col>
-        <div className="filter">
+        <div className="filter d-flex justify-content-between py-3">
           <ButtonGroup aria-label="Basic example">
-            <Button variant="secondary">ALL</Button>
+            <Button variant="warning">ALL</Button>
             <Button variant="secondary">HAPPY</Button>
-            <Button variant="secondary">SAD</Button>
+            <Button variant="danger">SAD</Button>
           </ButtonGroup>
           <ButtonGroup aria-label="Basic example">
-            <Button variant="secondary">GRID</Button>
+            <Button variant="primary">GRID</Button>
             <Button variant="secondary">LIST</Button>
           </ButtonGroup>
         </div>
