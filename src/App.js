@@ -1,11 +1,15 @@
+import { Container } from "react-bootstrap";
 import "./App.css";
+import { Title } from "./component/title/Title";
 
-function App() {
+const App = () => {
   return (
-    <div className="bg-primary">
-      <h1>HELLO</h1>
+    <div className="wrapper">
+      <Container>
+        <Title></Title>
+      </Container>
     </div>
   );
-}
+};
 
 export default App;

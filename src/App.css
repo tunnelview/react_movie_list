@@ -1,4 +1,10 @@
-.App {
+.wrapper {
+  background: black;
+  min-height: 100vh;
+  color: aquamarine;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
