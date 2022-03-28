@@ -12,6 +12,10 @@ export const Movielist = () => {
             <Button variant="secondary">HAPPY</Button>
             <Button variant="secondary">SAD</Button>
           </ButtonGroup>
+          <ButtonGroup aria-label="Basic example">
+            <Button variant="secondary">GRID</Button>
+            <Button variant="secondary">LIST</Button>
+          </ButtonGroup>
         </div>
         <div className="d-flex justify-content-between flex-wrap"></div>
         <CustomCard />
